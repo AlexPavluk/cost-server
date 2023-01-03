@@ -2,7 +2,8 @@
     "version": 2,
     "env": {
         "SERVER_URL": "mongodb+srv://alex:2w1xz11x@cluster0.j3cpq52.mongodb.net/?retryWrites=true&w=majority",
-        "DB_NAME": "Costs"
+        "DB_NAME": "Costs",
+        "PORT": "4200"
       },
     "builds": [
 
