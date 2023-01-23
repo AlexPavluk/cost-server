@@ -2,14 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
 
-  app.enableCors({
-    origin: 'https://costs-client-omega.vercel.app/',
-    allowedHeaders: ['content-type'],
-    credentials: true,
-  });
-
-  await app.listen(process.env.PORT || 4200);
+  await app.listen(4200);
 }
 bootstrap();

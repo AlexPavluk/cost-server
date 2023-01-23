@@ -27,7 +27,6 @@ export class AuthController {
   @Post('login')
   async loginUser(@Body() loginUserDto: LoginUserDto, @Res() res: Response) {
     const user = await this.userService.login(loginUserDto);
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
     const access = await this.authService.generateAccessToken(user);
     const refresh = await this.authService.generateRefreshToken(
       user._id as string,
